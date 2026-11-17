@@ -9,13 +9,13 @@ plugins {
 }
 
 android {
-  namespace = "com.example"
-  compileSdk { version = release(36) { minorApiLevel = 1 } }
+  namespace = "us.cyborgasm"
+  compileSdk { version = release(37) }
 
   defaultConfig {
-    applicationId = "com.aistudio.paperfetch.wryq"
+    applicationId = "us.cyborgasm.paperfetch"
     minSdk = 24
-    targetSdk = 36
+    targetSdk = 37
     versionCode = 6
     versionName = "6.0"
 

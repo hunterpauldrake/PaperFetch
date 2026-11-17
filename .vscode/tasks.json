@@ -1,0 +1,29 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Release APK",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-NoProfile",
+                "-Command",
+                "$c = Get-Content my-upload-key.credentials.txt | ConvertFrom-StringData; $env:STORE_PASSWORD=$c.STORE_PASSWORD; $env:KEY_PASSWORD=$c.KEY_PASSWORD; $env:KEYSTORE_PATH=\"$PWD\\my-upload-key.jks\"; .\\gradlew.bat assembleRelease"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Build Release AAB",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-NoProfile",
+                "-Command",
+                "$c = Get-Content my-upload-key.credentials.txt | ConvertFrom-StringData; $env:STORE_PASSWORD=$c.STORE_PASSWORD; $env:KEY_PASSWORD=$c.KEY_PASSWORD; $env:KEYSTORE_PATH=\"$PWD\\my-upload-key.jks\"; .\\gradlew.bat bundleRelease"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        }
+    ]
+}
